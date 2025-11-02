@@ -1,0 +1,366 @@
+/* =================================
+   Global & Typography
+   ================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f4f7f6;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+}
+
+h1, h2 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 25px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-top: 20px;
+}
+
+h2 {
+    font-size: 1.75rem;
+    color: #34495e;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 10px;
+    margin-top: 30px;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #0056b3;
+}
+
+/* =================================
+   Navigation (Dashboards)
+   ================================= */
+
+nav {
+    background-color: #343a40;
+    padding: 10px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.top-bar {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.logout-link {
+    color: #fff;
+    font-weight: bold;
+    padding: 8px 16px;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.logout-link:hover {
+    background-color: #fff;
+    color: #343a40;
+}
+
+/* =================================
+   Layout & Wrappers
+   ================================= */
+
+/* For Add/Edit Book Forms */
+.form-wrapper {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* For Dashboard Tables */
+.display-tables {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    overflow-x: auto; /* For responsive tables */
+}
+
+/* For Main Login Page */
+.login {
+    max-width: 450px;
+    margin: 20px auto;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.login h2 {
+    border: none;
+    margin-bottom: 20px;
+}
+
+.btn-container {
+    text-align: center;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+/* =================================
+   Forms (Login, Register, Add/Edit)
+   ================================= */
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="number"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="tel"]:focus,
+input[type="number"]:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.25);
+    outline: none;
+}
+
+button,
+.btn-container button {
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    padding: 12px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    margin-top: 10px;
+}
+
+button:hover,
+.btn-container button:hover {
+    background-color: #0056b3;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* =================================
+   Popups / Modals (index.php)
+   ================================= */
+
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    background-color: #fff;
+    margin: auto;
+    padding: 30px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 450px;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.close-btn {
+    color: #aaa;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: #333;
+}
+
+.popup h2 {
+    border: none;
+    margin-bottom: 20px;
+}
+
+/* =================================
+   Tables (Dashboards)
+   ================================= */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+th, td {
+    padding: 12px 15px;
+    border: 1px solid #e0e0e0;
+    text-align: left;
+    vertical-align: middle;
+}
+
+th {
+    background-color: #f8f9fa;
+    font-weight: bold;
+    color: #333;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Table action links */
+.table-btn {
+    font-weight: bold;
+    padding: 4px 8px;
+    border-radius: 4px;
+    display: inline-block;
+    font-size: 0.9rem;
+}
+
+/* Specific colors for table actions */
+a.table-btn[href*="edit_book.php"] {
+    color: #007bff;
+}
+a.table-btn[href*="edit_book.php"]:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+a.table-btn[href*="borrow_book.php"] {
+    color: #28a745;
+}
+a.table-btn[href*="borrow_book.php"]:hover {
+    color: #1e7e34;
+    text-decoration: underline;
+}
+
+a.table-btn[href*="return_book.php"] {
+    color: #ffc107;
+}
+a.table-btn[href*="return_book.php"]:hover {
+    color: #d39e00;
+    text-decoration: underline;
+}
+
+a.table-btn[href*="delete.php"] {
+    color: #dc3545;
+}
+a.table-btn[href*="delete.php"]:hover {
+    color: #a71d2a;
+    text-decoration: underline;
+}
+
+/* Button to "Add New Book" */
+.display-tables button {
+    background-color: #28a745;
+}
+
+.display-tables button:hover {
+    background-color: #1e7e34;
+}
+
+.display-tables button a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* =================================
+   Search Bar (Dashboards)
+   ================================= */
+
+.search-bar {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.search-bar input[type="text"] {
+    flex-grow: 1;
+    margin-bottom: 0;
+}
+
+.search-bar button {
+    margin-top: 0;
+    flex-shrink: 0; /* Prevents button from shrinking */
+}
+
+.table-wrapper {
+  max-height: 500px; /* Set your desired height */
+  overflow-y: auto;
+}
