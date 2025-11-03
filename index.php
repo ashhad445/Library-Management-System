@@ -26,7 +26,7 @@
   </div>
 
   <div class="btn-container">
-    <button onclick="openPopup('registerPopup')">Register</button>
+    <button onclick="openPopup('registerPopup')">Register </button>
     <button onclick="openPopup('adminPopup')">Admin Login</button>
   </div>
 
