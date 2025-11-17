@@ -130,7 +130,7 @@ $conn->close();
             <td><?php echo $row['due_date']; ?></td>
             <td><?php echo $row['status']; ?></td>
             <td>
-                <a href="return_book.php?id=<?php echo $row['borrow_id']; ?>" class = "table-btn">Mark as Returned</a>
+                <a href="return_book.php?borrow_id=<?php echo $row['borrow_id']; ?>" class = "table-btn">Mark as Returned</a>
         </tr>
         <?php endwhile; ?>
     </table>

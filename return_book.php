@@ -1,7 +1,7 @@
 <?php
 
 include 'db.php';
-$id = $_GET['member_id'];
+$id = $_GET['member_id'] ?? '';
 $borrow_id = $_GET['borrow_id'];
 
 $sqlCheck = "SELECT * FROM borrow_records WHERE borrow_id='$borrow_id'";
@@ -33,8 +33,12 @@ if ($conn->query($sql) === TRUE) {
     $updateSql = "UPDATE books SET available_copies = available_copies+1 WHERE book_id='$book_id'";
     $conn->query($updateSql);
 
-    header("Location: user_dashboard.php?id=" . $id);
-    exit();
+    if ($id == '') {
+        $redirectUrl = "user_dashboard.php?id=" . $id;
+    } else {
+        $redirectUrl = "admin_dashboard.php";
+    }
+    header("Location: " . $redirectUrl);
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
